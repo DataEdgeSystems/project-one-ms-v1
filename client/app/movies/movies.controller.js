@@ -55,6 +55,7 @@ class MoviesComponent {
   }
 
   removeMovie(_id) {
+    var self = this;
     bootbox.confirm(
       {
           title: 'Remove Movie',
@@ -62,7 +63,12 @@ class MoviesComponent {
           size: 'medium',
           callback: function(result) {
             if(result) {
-                this.$http.delete('/api/movies/' + _id);
+                self.$http.delete('/api/movies/' + _id);
+                bootbox.alert({
+                  title: 'Information',
+                  message: 'Movie deleted successfully!',
+                  size: 'medium'
+                });
             }
           }
       }
@@ -75,6 +81,11 @@ class MoviesComponent {
       this.$http.post('/api/movies', this.movie);
     }
     this.refreshPage();
+    bootbox.alert({
+                  title: 'Information',
+                  message: 'Movie added successfully!',
+                  size: 'medium'
+                });
   }
 
   // for resetting the entire page!

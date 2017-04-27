@@ -75,9 +75,23 @@ class MoviesComponent {
 }
 
 
+Mapping of Movie to Theatre
 
 
-add socket as a parameter
-refer to this.socket = socket
+Theatres                                   Movies
 
-broadcast an $destroy event on the scope
+
+
+
+                MovieMapping
+                
+                MovieName - String
+                TheatreName - String
+                City - String
+                Place - String
+                Screen - Array
+                MovieDate - Array
+                ShowTiming - Array
+
+
+
