@@ -1,0 +1,83 @@
+REFER: https://github.com/angular-fullstack/generator-angular-fullstack
+
+1. Install the global dependency
+npm install -g yo gulp-cli bower generator-angular-fullstack@3.7.6
+NOTE: Since we are working with the angular 1.x so the version has to be specified.
+
+2. Create a directory for the project and run the command
+yo angular-fullstack
+
+Client
+3. Select the babel script to load the javascript code
+
+4. Use HTML only to create the markup
+
+5. Use CSS for writing the stylesheets
+
+6. Use ngRoute for routing capability in angular js
+
+7. For including bootstrap just type Y
+
+8. No for using ui bootstrap
+
+# Server
+
+9. What would you like to use for data modeling? - mongoose
+
+10. Would you scaffold out an authentication boilerplate? Y
+
+11. No open authentication would be used for application.
+
+12. Use socket.io
+
+13. Would you like to use gulp or grunt yes gulp
+
+14. Select the Mocha + Chai + Sinon for writing the test cases.
+
+15. Chai assertions with Expect
+
+
+Now to run the project write the command
+
+gulp serve
+
+in the file
+
+yo angular-fullstack:route movies
+
+yo angular-fullstack:endpoint movie
+
+
+
+Created another method inside the MovieComponent
+
+class MoviesComponent {
+
+  constructor($http) {
+    this.message = 'Hello';
+    this.$http = $http;
+    this.movies = [];
+  }
+
+  AddMovies() {
+    this.$http.post('the url to endpoint', {
+
+    });
+  }
+
+  $onInit() {
+    this.$http.get('the url to the endpoint').then(response => {
+      this.movies =
+    });
+  }
+
+
+}
+
+
+
+
+add socket as a parameter
+refer to this.socket = socket
+
+broadcast an $destroy event on the scope

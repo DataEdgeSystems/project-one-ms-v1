@@ -1,0 +1,188 @@
+
+<div class="container">
+
+
+  <div class="row">
+
+
+    <div class="col-md-8 col-md-offset-2">
+
+        <div class="panel panel-default">
+
+            <div class="panel-heading">Search Movie</div>
+
+            <div class="panel-body">
+
+            <form action="#" class="form-horizontal">
+                  <div class="form-group">
+
+                      <label for="title" class="col-md-4 control-label">Title: </label>
+                      <div class="col-md-8">
+
+                          <input type="text" class="form-control"  ng-model="moviesCtrl.search.title"/>
+
+                      </div>
+                  </div>
+
+
+                  <div class="form-group">
+
+                      <label for="title" class="col-md-4 control-label">Year: </label>
+                      <div class="col-md-8">
+
+                          <input type="text" class="form-control"  ng-model="moviesCtrl.search.year"/>
+
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+
+                      <div class="col-md-offset-4 col-md-8">
+
+                          <button type="button" class="btn btn-primary"  ng-click="moviesCtrl.searchMovie()">
+                              <span class="glyphicon glyphicon-search"></span> Search Movie
+                          </button>
+
+                      </div>
+                  </div>
+
+              </form>
+            </div>
+
+        </div>
+
+    </div>
+
+
+  </div>
+
+  <div class="row" ng-if="moviesCtrl.showSearchError!=''">
+    <div class="col-xs-12">
+      <div class="alert alert-warning">{{moviesCtrl.showSearchError}}</div>
+    </div>
+  </div>
+
+  <div class="row" ng-if="moviesCtrl.showSearchResult">
+
+    <div class="col-xs-12 col-sm-4">
+
+          <div class="thumbnail">
+            <img ng-src="{{moviesCtrl.movie.Poster}}" alt="{{moviesCtrl.movie.Title}}" />
+            <hr>
+            <div class="center-block text-center">
+              <a ng-href="http://www.imdb.com/title/{{moviesCtrl.movie.imdbID}}" class="btn btn-lg btn-primary">
+                <span class="glyphicon glyphicon-eye-open">&#160;View</span>
+              </a>
+              &#160;
+              <button type="button" class="btn btn-lg btn-primary" ng-click="moviesCtrl.addMovie()">
+                <span class="glyphicon glyphicon-plus">&#160;Add</span>
+              </button>
+            </div>
+
+          </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-8">
+      <div class="thumbnail">
+        <div class="row">
+          <div class="col-xs-12">
+            <h1>{{moviesCtrl.movie.Title}}</h1>
+            <hr>
+          </div>
+        </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6">
+              <h3>Actors: <strong>{{moviesCtrl.movie.Actors}}</strong></h3>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <h3>Director: <strong>{{moviesCtrl.movie.Director}}</strong></h3>
+            </div>
+          </div>
+          <div class=row>
+            <div class="col-xs-12">
+              <hr/>
+              <h3>Plot</h3>
+              <hr/>
+              <p class="moviePlot">{{moviesCtrl.movie.Plot}}</p>
+              <hr/>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <div style="overflow:auto">
+              <table class="table table-condensed table-bordered">
+                <tr>
+                  <th>Genre</th>
+                  <th>Type</th>
+                  <th>Country</th>
+                  <th>Language</th>
+                  <th>Year</th>
+                  <th>Released</th>
+                  <th>Runtime</th>
+                  <th>IMDB Rating</th>
+                </tr>
+                <tr>
+                  <td>{{moviesCtrl.movie.Genre}}</td>
+                  <td>{{moviesCtrl.movie.Type}}</td>
+                  <td>{{moviesCtrl.movie.Country}}</td>
+                  <td>{{moviesCtrl.movie.Language}}</td>
+                  <td>{{moviesCtrl.movie.Year}}</td>
+                  <td>{{moviesCtrl.movie.Released}}</td>
+                  <td>{{moviesCtrl.movie.Runtime}}</td>
+                  <td>{{moviesCtrl.movie.imdbRating}}</td>
+                </tr>
+              </table>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col-xs-12">
+      <h3>Movies Inside the Database</h3>
+      <hr/>
+      <div ng-if="moviesCtrl.movies.length <= 0"><h4/>No movies inside the database!</h4></div>
+      <div class="flow">
+        <div ng-if="moviesCtrl.movies.length > 0">
+          <table class="table table-bordered table-striped">
+
+            <tr>
+              <th>Sr. No</th>
+              <th>Title</th>
+              <th>Year</th>
+              <th>Type</th>
+              <th>Country</th>
+              <th>Genre</th>
+              <th>Released Date</th>
+              <th>&#160;</th>
+            </tr>
+
+            <tr ng-repeat="movie in moviesCtrl.movies">
+              <td>{{$index+1}}</td>
+              <td>{{movie.Title}}</td>
+              <td>{{movie.Year}}</td>
+              <td>{{movie.Type}}</td>
+              <td>{{movie.Country}}</td>
+              <td>{{movie.Genre}}</td>
+              <td>{{movie.Released}}</td>
+              <td><button type="button" class="btn btn-primary" ng-click="moviesCtrl.removeMovie(movie._id)"><span class="glyphicon glyphicon-remove"></span></button></td>
+            </tr>
+
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+</div>

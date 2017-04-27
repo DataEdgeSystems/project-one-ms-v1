@@ -1,0 +1,39 @@
+movie.Title
+movie.Rated
+
+movie.Poster
+
+movie.Director
+movie.Writer
+movie.Actors
+movie.Plot
+
+movie.Genre
+movie.Type
+movie.Country
+movie.Language
+movie.Year
+movie.Released
+movie.Runtime
+movie.imdbRating
+
+movie.imdbID
+
+
+
+Title: String,
+Year: Number
+Rated: String,
+Released: String,
+Runtime: String,
+Genre: String,
+Director: String,
+Writer: String,
+Actors: String,
+Plot: String,
+Language: String,
+Country: String,
+Poster: String,
+imdbRating: Number,
+imdbID: String,
+Type: String
