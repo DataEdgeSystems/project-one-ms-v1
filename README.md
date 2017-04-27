@@ -1,6 +1,8 @@
-# yo-template
+# Book A Movie
 
-This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 3.7.6.
+This project is part of the MEAN Stack course where there are two user admin and moviegoers who want to book a movie for a respective theatre. 
+
+The theatre management and movie mapping is done by the administrator of the application.
 
 ## Getting Started
 
